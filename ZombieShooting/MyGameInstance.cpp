@@ -177,8 +177,8 @@ float UMyGameInstance::GetMonsterAttackSpeed(FString MonsterType)
 
 USkeletalMesh* UMyGameInstance::GetMonsterSkeletalMesh(FString MonsterType)
 {
-	FStaticMeshDataTable* SkeletalMeshData = FSkeletalMeshTable->FindRow<FStaticMeshDataTable>(*MonsterType, TEXT(""));
-	USkeletalMesh* MonsterSkeletalMesh = SkeletalMeshData->MonsterMesh;
+	FMonsterDataTable* SkeletalMeshData = FMonsterTable->FindRow<FMonsterDataTable>(*MonsterType, TEXT(""));
+	USkeletalMesh* MonsterSkeletalMesh = SkeletalMeshData->MonsterSkeletalMesh;
 	return MonsterSkeletalMesh;
 }
 

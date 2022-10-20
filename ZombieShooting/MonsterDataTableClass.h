@@ -37,6 +37,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float MonsterAttackSpeed;
 
+	// ¸ó½ºÅÍ ½ºÄÌ·¹Å» ¸Þ½Ã
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		USkeletalMesh* MonsterSkeletalMesh;
+
+
+
 };
 
 UCLASS()
