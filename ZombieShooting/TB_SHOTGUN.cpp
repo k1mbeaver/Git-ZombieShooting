@@ -8,7 +8,7 @@ void ATB_SHOTGUN::SettingPlayerGun(AActor* myCharacter, FString yourGun)
 {
 	AMyCharacter* CastMyCharacter = Cast<AMyCharacter>(myCharacter);
 
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("SHOTGUN!"));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("SHOTGUN!"));
 	CastMyCharacter->PlaySettingGun(yourGun);
 }
 

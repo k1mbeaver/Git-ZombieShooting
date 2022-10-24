@@ -198,7 +198,7 @@ void AMyAICharacter::AttackCheck()
 	{
 		if (HitResult.Actor.IsValid())
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
+			//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Hit!"));
 			FDamageEvent DamageEvent;
 			AMyCharacter* HitCharacter = Cast<AMyCharacter>(HitResult.Actor);
 			HitCharacter->TakeDamage(AttackPower, DamageEvent, GetController(), this);
@@ -209,7 +209,7 @@ void AMyAICharacter::AttackCheck()
 void AMyAICharacter::AttackByPlayer(float DamageAmount)
 {
 	fAIHp -= DamageAmount;
-	GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("AIHit!"));
+	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("AIHit!"));
 
 	//MonsterHpBar->SetMonsterHP(fAIHp / fMaxHp);
 
@@ -235,7 +235,7 @@ void AMyAICharacter::AttackByPlayer(float DamageAmount)
 	// 스테이지의 몬스터가 모두 죽으면
 	if (MyGI->nMonsterDeath == nMonsterCount)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("GameEnd!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("GameEnd!"));
 		MyGI->SetPlayerStage();
 		//UGameplayStatics::OpenLevel(GetWorld(), FName("ConceptMap"));
 

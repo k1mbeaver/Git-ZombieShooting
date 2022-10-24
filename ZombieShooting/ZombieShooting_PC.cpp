@@ -16,7 +16,7 @@ void AZombieShooting_PC::OnPossess(APawn* aPawn)
 	if (aPawn)
 	{
 		myCharacter = Cast<AMyCharacter>(aPawn);
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Success!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Success!"));
 		SetInputMode(FInputModeGameOnly());
 	}
 }
@@ -102,7 +102,7 @@ void AZombieShooting_PC::Jump()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->Jump();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Jump!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Jump!"));
 	}
 }
 
@@ -111,7 +111,7 @@ void AZombieShooting_PC::StopJumping()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->StopJumping();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("StopJumping!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("StopJumping!"));
 	}
 }
 
@@ -120,7 +120,7 @@ void AZombieShooting_PC::ReadyFire()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->ReadyFire();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("ReadyFire!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("ReadyFire!"));
 	}
 }
 
@@ -129,7 +129,7 @@ void AZombieShooting_PC::ResetReadyFire()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->ResetReadyFire();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("ResetReadyFire!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("ResetReadyFire!"));
 	}
 }
 
@@ -138,7 +138,7 @@ void AZombieShooting_PC::OnFire()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->OnFire();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("OnFire!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("OnFire!"));
 	}
 }
 
@@ -147,7 +147,7 @@ void AZombieShooting_PC::Run()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->Run();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Run!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("Run!"));
 	}
 }
 
@@ -156,7 +156,7 @@ void AZombieShooting_PC::StopRun()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->StopRun();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("StopRun!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("StopRun!"));
 	}
 }
 
@@ -165,6 +165,6 @@ void AZombieShooting_PC::PlayerPause()
 	if (myCharacter != nullptr)
 	{
 		myCharacter->PlayerPause();
-		GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerPause!"));
+		//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("PlayerPause!"));
 	}
 }
