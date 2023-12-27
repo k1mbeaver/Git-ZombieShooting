@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "ZombieShooting.h"
 #include "GameFramework/Character.h"
+#include "Components/WidgetComponent.h"
 #include "MyAICharacter.generated.h"
 
 DECLARE_MULTICAST_DELEGATE(FOnAttackEndDelegate);
@@ -42,20 +43,17 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 		USoundBase* DeathSound;
 
-	//UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
-		//class UWidgetComponent* AIWidget;
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
+		class UWidgetComponent* AIWidget;
 
-	//UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
-		//class UStaticMeshComponent* HPStatic;
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
+		class UStaticMeshComponent* HPStatic;
 
-	//UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
-		//class UAIHPBar_UW* MonsterHpBar;
+	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
+		class UAIHPBar_UW* MonsterHpBar;
 
-	//UPROPERTY(EditDefaultsOnly, Category = HP)
-	//	TSubclassOf<class UUserWidget> MONSTER_HPClass;
-
-	//UPROPERTY(EditDefaultsOnly, Category = HP)
-		//TSubclassOf<class UAIHPBar_UW> MONSTER_HPTClass;
+	UPROPERTY(EditDefaultsOnly, Category = HP)
+		TSubclassOf<class UUserWidget> MONSTER_HPClass;
 
 	// damage particle
 	UPROPERTY()
@@ -66,18 +64,6 @@ public:
 
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 		USceneComponent* MuzzleLocation;
-	
-	//UPROPERTY(VisibleAnywhere, BlueprintReadWrite, BlueprintSetter = SetCharacterHP)
-		//UAIHPBar_UW* CharacterHP;
-
-	//UFUNCTION(BlueprintSetter)
-	//void SetCharacterHP(UAIHPBar_UW* GetCharacterHP)
-	//{
-	//	CharacterHP = GetCharacterHP;
-	//}
-
-	//UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
-		//class UMonsterHP_UW* CastMonsterHP;
 
 	int nMonsterCount;
 protected:

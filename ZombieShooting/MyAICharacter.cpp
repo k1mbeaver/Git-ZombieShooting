@@ -56,7 +56,7 @@ AMyAICharacter::AMyAICharacter()
 	MuzzleLocation->SetupAttachment(GetCapsuleComponent());
 	MuzzleLocation->SetRelativeLocation(FVector(50.0f, 20.0f, 35.0f));
 
-/*
+
 	AIWidget = CreateDefaultSubobject<UWidgetComponent>("HPBar");
 	static ConstructorHelpers::FClassFinder<UUserWidget> MONSTER_HP(TEXT("/Game/Widget/AIHPBar_WB"));
 
@@ -72,23 +72,6 @@ AMyAICharacter::AMyAICharacter()
 	AIWidget->SetWidgetClass(MONSTER_HPClass);
 	AIWidget->SetVisibility(true);
 	AIWidget->RegisterComponent();
-*/
-	/*
-	HPStatic = CreateDefaultSubobject<UStaticMeshComponent>("HPBar");
-	static ConstructorHelpers::FClassFinder<UUserWidget> MONSTER_HP(TEXT("/Game/Widget/AIHPBar_WB"));
-
-	if (MONSTER_HP.Succeeded())
-	{
-		MONSTER_HPClass = MONSTER_HP.Class;
-	}
-
-	//MonsterHpBar->SetWidgetSpace(EWidgetSpace::World);
-	//MonsterHpBar->SetDrawSize(FVector2D(100, 10));
-	HPStatic->SetRelativeLocation(FVector(0.0f, 0.0f, 140.0f));
-	//MonsterHpBar->SetWidgetClass(MONSTER_HPClass);
-	//MonsterHpBar->SetVisibility(true);
-	//MonsterHpBar->RegisterComponent();
-	*/
 
 	// Damage effect
 	static ConstructorHelpers::FObjectFinder<UParticleSystem> DAMAGE(TEXT("ParticleSystem'/Game/ParagonGrux/FX/Particles/Abilities/Primary/FX/P_Grux_ApplyBleed.P_Grux_ApplyBleed'"));
@@ -112,14 +95,14 @@ void AMyAICharacter::BeginPlay()
 
 	UMyGameInstance* MyGI = GetGameInstance<UMyGameInstance>();
 
-	//nMonsterCount = MyGI->GetPlayerStage();
-	//fAIHp = MyGI->GetMonsterHp("GeneralMonster");
-	//fMaxHp = fAIHp;
-	//AttackPower = MyGI->GetMonsterAttackDamage("GeneralMonster");
+	nMonsterCount = MyGI->GetPlayerStage();
+	fAIHp = MyGI->GetMonsterHp("GeneralMonster");
+	fMaxHp = fAIHp;
+	AttackPower = MyGI->GetMonsterAttackDamage("GeneralMonster");
 
 	InitializeAI(MyGI->strSkeletalMesh);
 
-	//MonsterHpBar = Cast<UAIHPBar_UW>(AIWidget->GetWidgetClass());
+	MonsterHpBar = Cast<UAIHPBar_UW>(AIWidget->GetWidgetClass());
 }
 
 // Called every frame
@@ -211,7 +194,7 @@ void AMyAICharacter::AttackByPlayer(float DamageAmount)
 	fAIHp -= DamageAmount;
 	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("AIHit!"));
 
-	//MonsterHpBar->SetMonsterHP(fAIHp / fMaxHp);
+	MonsterHpBar->SetMonsterHP(fAIHp / fMaxHp);
 
 	UMyGameInstance* MyGI = GetGameInstance<UMyGameInstance>();
 
