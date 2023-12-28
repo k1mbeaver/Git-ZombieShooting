@@ -72,6 +72,11 @@ void APlayerInterface_HUD::SetPlayerHP(float fCurrentHP)
 	MainUIObject->SetPlayerHP(fCurrentHP);
 }
 
+void APlayerInterface_HUD::SetMonsterHP(float fCurrentHP)
+{
+	MainUIObject->SetMonsterHP(fCurrentHP);
+}
+
 void APlayerInterface_HUD::DrawHUD()
 {
 	Super::DrawHUD();

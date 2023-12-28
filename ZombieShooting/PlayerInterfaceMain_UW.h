@@ -27,11 +27,15 @@ private:
 	UPROPERTY(Meta = (BindWidget))
 		class UGameClear_UW* GameClear_WB;
 
+	UPROPERTY(Meta = (BindWidget))
+		class UMonsterHP_UW* AIHPBar_WB;
+
 public:
 	void SetCurrentBullet(int nMissionClear, bool bIsSpecial);
 	void SetDefaultBullet(bool bIsSpecial);
 	void SetGunName(FString strGunName);
 	void SetPlayerHP(float fCurrentHP);
+	void SetMonsterHP(float fCurrentHP);
 	void SetGameOverUIVisible();
 	void SetGameOverUIHidden();
 	void SetGameClearUIVisible();

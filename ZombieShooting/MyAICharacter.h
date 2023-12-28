@@ -43,18 +43,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
 		USoundBase* DeathSound;
 
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
-		class UWidgetComponent* AIWidget;
-
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
-		class UStaticMeshComponent* HPStatic;
-
-	UPROPERTY(VisibleInstanceOnly, BlueprintReadOnly, Category = HP, Meta = (AllowPrivateAccess = true))
-		class UAIHPBar_UW* MonsterHpBar;
-
-	UPROPERTY(EditDefaultsOnly, Category = HP)
-		TSubclassOf<class UUserWidget> MONSTER_HPClass;
-
 	// damage particle
 	UPROPERTY()
 		class UParticleSystem* DamageParticle;

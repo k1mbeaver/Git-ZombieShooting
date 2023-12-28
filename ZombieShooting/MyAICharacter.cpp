@@ -56,23 +56,6 @@ AMyAICharacter::AMyAICharacter()
 	MuzzleLocation->SetupAttachment(GetCapsuleComponent());
 	MuzzleLocation->SetRelativeLocation(FVector(50.0f, 20.0f, 35.0f));
 
-
-	AIWidget = CreateDefaultSubobject<UWidgetComponent>("HPBar");
-	static ConstructorHelpers::FClassFinder<UUserWidget> MONSTER_HP(TEXT("/Game/Widget/AIHPBar_WB"));
-
-	if (MONSTER_HP.Succeeded())
-	{
-		MONSTER_HPClass = MONSTER_HP.Class;
-	}
-
-	AIWidget->SetupAttachment(GetCapsuleComponent());
-	AIWidget->SetWidgetSpace(EWidgetSpace::World);
-	AIWidget->SetDrawSize(FVector2D(100, 10));
-	AIWidget->SetRelativeLocation(FVector(0.0f, 0.0f, 140.0f));
-	AIWidget->SetWidgetClass(MONSTER_HPClass);
-	AIWidget->SetVisibility(true);
-	AIWidget->RegisterComponent();
-
 	// Damage effect
 	static ConstructorHelpers::FObjectFinder<UParticleSystem> DAMAGE(TEXT("ParticleSystem'/Game/ParagonGrux/FX/Particles/Abilities/Primary/FX/P_Grux_ApplyBleed.P_Grux_ApplyBleed'"));
 	if (DAMAGE.Succeeded())
@@ -101,8 +84,6 @@ void AMyAICharacter::BeginPlay()
 	AttackPower = MyGI->GetMonsterAttackDamage("GeneralMonster");
 
 	InitializeAI(MyGI->strSkeletalMesh);
-
-	MonsterHpBar = Cast<UAIHPBar_UW>(AIWidget->GetWidgetClass());
 }
 
 // Called every frame
@@ -191,10 +172,10 @@ void AMyAICharacter::AttackCheck()
 
 void AMyAICharacter::AttackByPlayer(float DamageAmount)
 {
-	fAIHp -= DamageAmount;
+	//fAIHp -= DamageAmount;
 	//GEngine->AddOnScreenDebugMessage(-1, 3.0f, FColor::Red, TEXT("AIHit!"));
 
-	MonsterHpBar->SetMonsterHP(fAIHp / fMaxHp);
+	//MonsterHpBar->SetMonsterHP(fAIHp / fMaxHp);
 
 	UMyGameInstance* MyGI = GetGameInstance<UMyGameInstance>();
 

@@ -6,6 +6,7 @@
 #include "GamePause_UW.h"
 #include "GameOver_UW.h"
 #include "GameClear_UW.h"
+#include "MonsterHP_UW.h"
 
 void UPlayerInterfaceMain_UW::SetCurrentBullet(int nCurrentBullet, bool bIsSpecial)
 {
@@ -25,6 +26,11 @@ void UPlayerInterfaceMain_UW::SetGunName(FString strGunName)
 void UPlayerInterfaceMain_UW::SetPlayerHP(float fCurrentHP)
 {
 	PlayerInterface_WB->SetPlayerHP(fCurrentHP);
+}
+
+void UPlayerInterfaceMain_UW::SetMonsterHP(float fCurrentHP)
+{
+	AIHPBar_WB->SetMonsterHP(fCurrentHP);
 }
 
 void UPlayerInterfaceMain_UW::SetGameOverUIVisible()

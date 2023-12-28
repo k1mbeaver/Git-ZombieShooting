@@ -23,6 +23,7 @@ public:
 	void SetDefaultBullet(bool bIsSpecial);
 	void SetGunName(FString strGunName);
 	void SetPlayerHP(float fCurrentHP);
+	void SetMonsterHP(float fCurrentHP);
 	void SetGameOverUIVisible();
 	void SetGameOverUIHidden();
 	void SetGameClearUIVisible();
